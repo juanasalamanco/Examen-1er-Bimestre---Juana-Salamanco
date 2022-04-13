@@ -17,9 +17,9 @@ public class tema4 : MonoBehaviour
         {
             Debug.Log("Error, la cantidad total de dias debe ser mayor a 5");
         }
-        else if(diasLluvia == 0)
+        else if(diasLluvia < 0)
         {
-            Debug.Log("Error, tiene que haber por lo menos un dia de lluvia");
+            Debug.Log("Error, no podes ingresar un numero negativo");
         }
         else if(diasLluvia > diasTotal)
         {
@@ -38,10 +38,12 @@ public class tema4 : MonoBehaviour
 
             int litrosTotales = litrosUsados + litrosUsadosLluvia;
 
-            int costoLitroTotal = litrosTotales * 130;
+            int costoLitroUnidad = litrosTotales * 130;
+
+            int costoLitrosTotales = costoLitroUnidad * flota;
 
             Debug.Log("Una flota de " + flota + " unidades trabajando durante " + diasTotal + " días implicará un gasto" +
-            " de " + costoLitroTotal + " pesos en concepto de combustible");
+            " de " + costoLitrosTotales + " pesos en concepto de combustible");
         }
 
 
